@@ -1,0 +1,11 @@
+set Air_Media := TV Radio;
+set Print_Media := Magazine Journal;
+
+
+param max_rate_print_air := 0.40;
+param max_cost := 30000;
+param :   cost efficiency min_adv max_adv := 
+TV        1000     100       5    10000
+Radio     500      22        5    10000
+Magazine  600      70        0    12
+Journal   400      50        0    10000;
