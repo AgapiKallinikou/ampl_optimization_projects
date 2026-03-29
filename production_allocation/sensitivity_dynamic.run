@@ -1,0 +1,20 @@
+option solver cplex;
+model Production.mod;
+data Production.dat;
+set avail_leather default {};
+param avail_leather_obj{a in avail_leather};
+param avail_leather_slack{a in avail_leather};
+param avail_leather_dual{a in avail_leather};
+param avail_leather_step;
+let avail_leather_step:=2;
+repeat {
+solve;
+let avail_leather:= avail_leather union {availability["leather"]};
+let avail_leather_obj[availability["leather"]]:=Profit;
+let avail_leather_slack[availability["leather"]]:=Availability["leather"].slack;
+let avail_leather_dual[availability["leather"]]:=Availability["leather"].dual;
+let availability["leather"]:=availability["leather"]+avail_leather_step;
+} while Availability["leather"].dual > 0 ;
+display avail_leather_obj;
+display avail_leather_slack;
+display avail_leather_dual;
