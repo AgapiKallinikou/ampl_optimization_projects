@@ -1,0 +1,15 @@
+set Resources := leather sewing finishing;
+set Products := purse bag backpack;
+
+param price := purse    20
+               bag      34
+               backpack 38;
+
+param availability := leather   30
+                      sewing    40
+                      finishing 45;
+
+param requirements : purse   bag    backpack :=
+          leather      1      2         3
+          sewing       1.5    2.2       2
+          finishing    0.5    1         1;

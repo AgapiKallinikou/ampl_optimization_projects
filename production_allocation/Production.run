@@ -1,0 +1,5 @@
+solve;
+display amount;
+display Availability.slack;
+display Availability.dual;
+let availability["leather"] := availability{"leather"] +10;
