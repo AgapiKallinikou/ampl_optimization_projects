@@ -1,0 +1,10 @@
+set Fields:= field_1 field_2 field_3;
+set Cereals:= cereal_A cereal_B cereal_C;
+param : surface water:=
+field_1 400      1500
+field_2 600      2000
+field_3 300      900;
+param :      max_surface      water_consumption        profit:=
+cereal_A       100                   5                   400
+cereal_B       800                   4                   300
+cereal_C       300                   3                   100;
